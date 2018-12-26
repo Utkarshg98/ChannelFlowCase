@@ -1,0 +1,75 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.1                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volScalarField;
+    object      omega;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+omegaInlet      1.0;
+
+dimensions      [0 0 -1 0 0 0 0];
+
+internalField   uniform $omegaInlet;
+
+boundaryField
+{
+    inletWater
+    {
+        type            fixedValue;
+        value           uniform $omegaInlet;
+    }
+
+    outletWater
+    {
+        type            inletOutlet;
+        inletValue      uniform $omegaInlet;
+        value           uniform $omegaInlet;
+    }
+    inletAir
+    {
+        type            fixedValue;
+        value           uniform $omegaInlet;
+    }
+
+    outletAir
+    {
+        type            inletOutlet;
+        inletValue      uniform $omegaInlet;
+        value           uniform $omegaInlet;
+    }
+
+    lowerWall
+    {
+        type            omegaWallFunction;
+        value           uniform $omegaInlet;
+    }
+    
+    atmosphere
+    {
+	type            inletOutlet;
+        inletValue      uniform $omegaInlet;
+        value           uniform $omegaInlet;
+    }
+    
+    front
+    {
+	type		empty;
+    }
+    
+    back
+    {
+	type		empty;
+    }
+    #includeEtc "caseDicts/setConstraintTypes"
+}
+
+// ************************************************************************* //
