@@ -1,9 +1,9 @@
 /*--------------------------------*- C++ -*----------------------------------*\
-| =========                 |                                                 |
-| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
-|  \\    /   O peration     | Version:  4.1                                   |
-|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
-|    \\/     M anipulation  |                                                 |
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  6
+     \\/     M anipulation  |
 \*---------------------------------------------------------------------------*/
 FoamFile
 {
@@ -21,52 +21,52 @@ FoamFile
     {
         type            patch;
         nFaces          37;
-        startFace       37357;
+        startFace       106651;
     }
     inletAir
     {
         type            patch;
-        nFaces          6;
-        startFace       37394;
+        nFaces          12;
+        startFace       106688;
     }
     outletWater
     {
         type            patch;
         nFaces          37;
-        startFace       37400;
+        startFace       106700;
     }
     outletAir
     {
         type            patch;
-        nFaces          6;
-        startFace       37437;
+        nFaces          12;
+        startFace       106737;
     }
     lowerWall
     {
         type            wall;
         inGroups        1(wall);
-        nFaces          440;
-        startFace       37443;
+        nFaces          1100;
+        startFace       106749;
     }
     atmosphere
     {
         type            patch;
-        nFaces          440;
-        startFace       37883;
+        nFaces          1100;
+        startFace       107849;
     }
     front
     {
         type            empty;
         inGroups        1(empty);
-        nFaces          18920;
-        startFace       38323;
+        nFaces          53900;
+        startFace       108949;
     }
     back
     {
         type            empty;
         inGroups        1(empty);
-        nFaces          18920;
-        startFace       57243;
+        nFaces          53900;
+        startFace       162849;
     }
 )
 
